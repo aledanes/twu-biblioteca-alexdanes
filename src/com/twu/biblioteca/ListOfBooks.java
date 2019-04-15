@@ -2,24 +2,18 @@ package com.twu.biblioteca;
 
 public class ListOfBooks {
 
-    public String[] books;
+    String bookTitle;
+    String bookAuthor;
+    int bookYear;
 
-    public void populateListOfBooks()
-    {
-
-        books = new String[3];
-
-        books[0] = "--Head First Java--";
-        books[1] = "--TDD by example--";
-        books[2] = "--Clean Code--";
-
+    public ListOfBooks(String title, String author, int year) {
+        bookTitle = title;
+        bookAuthor = author;
+        bookYear = year;
     }
 
-    public void displayListOfBooks()
+    public void displayBook()
     {
-        for (String s: books)
-        {
-            System.out.println(s);
-        }
+        System.out.println (bookTitle + " by " + bookAuthor + " from " + bookYear );
     }
 }
