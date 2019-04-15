@@ -18,11 +18,27 @@ public class BibliotecaApp {
 
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter your choice: ");
-        int i = in.nextInt();
+        boolean done = false;
+        int i = 0;
+        while (!done) {
+            System.out.print("Enter your choice:");
+            try {
+                i = in.nextInt();
+                if (i > 0 && i < 4) {
+                    done = true;
+                }
+                else{
+                        System.out.println("Choose one of the options displayed  [1], [2] or [3]");
+                    }
+                }
+                catch(InputMismatchException e){
+                    System.out.println("Invalid input type! It must be an integer");
+                    in.nextLine();
+                }
+            }
+        in.close();
 
-        if ( i != 1 && i != 2  && i!= 3)
-            System.out.println("Enter a number between 1 and 3 ");
+
 
         switch (i) {
             case 1:
@@ -31,9 +47,11 @@ public class BibliotecaApp {
                 book3.displayBook();
                 break;
             case 2:
-                System.out.println("something else");
+                System.out.println("Something else");
                 break;
-
+            case 3:
+                System.out.println("Display something else");
+                break;
         }
 
     }
